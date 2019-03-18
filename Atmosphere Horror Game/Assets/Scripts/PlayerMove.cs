@@ -44,6 +44,8 @@ public class PlayerMove : MonoBehaviour
 	{
 		move();
 
+		jump();
+
 		gameObject.transform.Translate(velocity * Time.deltaTime);
 	}
 
@@ -118,10 +120,9 @@ public class PlayerMove : MonoBehaviour
 		}
 	}
 
-	private void gravity()
+	void jump()
 	{
-		if (!onGround)
-			velocity.y -= Time.deltaTime * gravityForce;
+
 	}
 
 	public void lockMovement()

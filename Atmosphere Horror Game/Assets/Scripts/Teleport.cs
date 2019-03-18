@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
+	//this script simply teleports the player between to assumedly uniform locations
+	//more functionality will need to be added dependant upon what is needed of this script
+
 	public GameObject port = null;
 
 	void OnTriggerEnter(Collider c)
