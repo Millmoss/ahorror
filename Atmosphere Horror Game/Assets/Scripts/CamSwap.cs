@@ -22,5 +22,6 @@ public class CamSwap : MonoBehaviour
 	{
 		main.enabled = true;
 		swap.enabled = false;
+		print("ASDFA");
 	}
 }

@@ -51,6 +51,9 @@ public class PlayerCam : MonoBehaviour
 	private CURRENT_INPUT inputState;
 	private float deltaX;
 	private float deltaY;
+
+	public Transform lookto;
+	public bool goal;
     
 
     
@@ -93,7 +96,10 @@ public class PlayerCam : MonoBehaviour
 		}
 		else if (cameraState == CAMERA_STATE.FREE_CAM)
 		{
-			LookRotation(gameObject.transform, cam.transform);
+			if (goal)
+				GoalRotation(gameObject.transform, cam.transform);
+			else
+				LookRotation(gameObject.transform, cam.transform);
 		}
 		else if (cameraState == CAMERA_STATE.LOCK_CAM)
 		{
@@ -136,6 +142,20 @@ public class PlayerCam : MonoBehaviour
 
         UpdateCursorLock();
     }
+
+	public void GoalRotation(Transform character, Transform camera)
+	{
+		Vector3 charLook = lookto.transform.position;
+		charLook.y = character.position.y;
+
+		character.LookAt(charLook, Vector3.up);
+		camera.LookAt(lookto.transform.position, Vector3.up);
+		
+		m_CharacterTargetRot = character.localRotation;
+		m_CameraTargetRot = camera.localRotation;
+
+		UpdateCursorLock();
+	}
 
     public void SetCursorLock(bool value)
     {
