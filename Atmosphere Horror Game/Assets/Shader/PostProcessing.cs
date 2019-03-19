@@ -16,6 +16,6 @@ public class PostProcessing : MonoBehaviour
     {
         if(memes < max_size)
             memes += Time.deltaTime / 10000;
-        material.SetFloat("_Size", memes);
+        //material.SetFloat("_Size", memes);
     }
 }

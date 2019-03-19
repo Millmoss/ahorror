@@ -2457,6 +2457,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247612125}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1387351063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1397358073951511796, guid: bb1bcad282245594fbc5578c79f009ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1397358073509413412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1387351064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387351063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68fb1515352e534aa79743e1b91f21b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 464d17de8fc26bc47ab31c5205a38160, type: 2}
 --- !u!1 &1397635977
 GameObject:
   m_ObjectHideFlags: 0
@@ -2468,6 +2487,7 @@ GameObject:
   - component: {fileID: 1397635980}
   - component: {fileID: 1397635979}
   - component: {fileID: 1397635978}
+  - component: {fileID: 1397635981}
   m_Layer: 0
   m_Name: Cam1
   m_TagString: Untagged
@@ -2539,6 +2559,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 29.196001, y: 53.501003, z: 0}
+--- !u!114 &1397635981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397635977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68fb1515352e534aa79743e1b91f21b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 464d17de8fc26bc47ab31c5205a38160, type: 2}
 --- !u!1 &1483124158
 GameObject:
   m_ObjectHideFlags: 0
