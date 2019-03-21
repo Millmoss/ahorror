@@ -24,6 +24,7 @@ public class PlayerMove : MonoBehaviour
 	protected Collider characterCollider;
 	protected bool canMove;
 	protected bool onGround;
+	private float lt;
 
 	void Start()
 	{
@@ -38,15 +39,16 @@ public class PlayerMove : MonoBehaviour
 	void Update()
 	{
 		inputs();
-	}
 
-	void FixedUpdate()
-	{
 		move();
 
 		jump();
 
 		gameObject.transform.Translate(velocity * Time.deltaTime);
+	}
+
+	void FixedUpdate()
+	{
 	}
 
 	void LateUpdate()
