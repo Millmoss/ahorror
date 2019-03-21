@@ -35,11 +35,17 @@ public class FirstPersonCamera : MonoBehaviour
 
 		xr -= yDelta * ySensitivity * Time.deltaTime;
 		yr += xDelta * xSensitivity * Time.deltaTime;
-		
+
 		if (yr > 360)
+		{
+			yrDelay -= 360;
 			yr -= 360;
+		}
 		else if (yr < -360)
+		{
+			yrDelay += 360;
 			yr += 360;
+		}
 
 		if (xr > xMax)
 			xr = xMax;
@@ -49,8 +55,8 @@ public class FirstPersonCamera : MonoBehaviour
 		xrDelay = Mathf.Lerp(xrDelay, xr, 40 * Time.deltaTime);
 		yrDelay = Mathf.Lerp(yrDelay, yr, 40 * Time.deltaTime);
 
-		player.transform.rotation = Quaternion.Euler(0, yr, 0);
-		fpcam.transform.localRotation = Quaternion.Euler(xr, 0, 0);
+		player.transform.rotation = Quaternion.Euler(0, yrDelay, 0);
+		fpcam.transform.localRotation = Quaternion.Euler(xrDelay, 0, 0);
 
 		updateLock();
 	}

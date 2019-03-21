@@ -39,16 +39,15 @@ public class PlayerMove : MonoBehaviour
 	void Update()
 	{
 		inputs();
+	}
 
+	void FixedUpdate()
+	{
 		move();
 
 		jump();
 
 		gameObject.transform.Translate(velocity * Time.deltaTime);
-	}
-
-	void FixedUpdate()
-	{
 	}
 
 	void LateUpdate()
