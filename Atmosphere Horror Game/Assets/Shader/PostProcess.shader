@@ -20,8 +20,8 @@
 				// sample texture for color
 				
 				float2 uv = input.uv;
-				uv.x = ceil(uv.x / _Size) * _Size;
-				uv.y = ceil(uv.y / _Size) * _Size;
+				uv.x = ceil(uv.x / _Size) * _Size + _Size ;
+				uv.y = ceil(uv.y / _Size) * _Size + _Size ;
 
 				float4 base = tex2D(_MainTex, uv);
 
