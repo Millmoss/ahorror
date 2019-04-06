@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
 	private bool sprintInput;
 	public float acceleration = 3f;
 	public float moveSpeed = 4.5f;
+	public float sprintSpeed = 7.65f;
 	public float jumpForce = 100f;
 	protected Vector3 velocity = Vector3.zero;
 	protected Rigidbody characterBody;
@@ -20,6 +21,7 @@ public class PlayerMove : MonoBehaviour
 	protected bool canMove;
 	protected bool onGround;
 	private float lt;
+	public Animator anim;
 
 	void Start()
 	{
@@ -103,14 +105,19 @@ public class PlayerMove : MonoBehaviour
 
 		//limit to max speed
 
+		float speedPercent = 0;
+
 		if (sprintInput)
 		{
-			velocity = Vector3.ClampMagnitude(new Vector3(velocity.x, 0, velocity.z), moveSpeed * 1.7f) + new Vector3(0, velocity.y, 0);
+			velocity = Vector3.ClampMagnitude(new Vector3(velocity.x, 0, velocity.z), sprintSpeed) + new Vector3(0, velocity.y, 0);
+			speedPercent = new Vector3(velocity.x, 0, velocity.z).magnitude / sprintSpeed;
 		}
 		else
 		{
 			velocity = Vector3.ClampMagnitude(new Vector3(velocity.x, 0, velocity.z), moveSpeed) + new Vector3(0, velocity.y, 0);
+			speedPercent = new Vector3(velocity.x, 0, velocity.z).magnitude / (2 * moveSpeed);
 		}
+		anim.SetFloat("SpeedPercent", speedPercent, .1f, Time.deltaTime);
 	}
 
 	void jump()
