@@ -19789,6 +19789,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121578646}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2135644213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 331575432480226223, guid: 61d40a5057c46ad41828334c57236b4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 331575432868081587}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2136094264
 GameObject:
   m_ObjectHideFlags: 0
@@ -20067,5 +20073,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 331575432878239496, guid: 61d40a5057c46ad41828334c57236b4c,
+        type: 3}
+      propertyPath: sprintSpeed
+      value: 4.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 331575432878239496, guid: 61d40a5057c46ad41828334c57236b4c,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 331575432878239501, guid: 61d40a5057c46ad41828334c57236b4c,
+        type: 3}
+      propertyPath: neckJoint
+      value: 
+      objectReference: {fileID: 2135644213}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d40a5057c46ad41828334c57236b4c, type: 3}

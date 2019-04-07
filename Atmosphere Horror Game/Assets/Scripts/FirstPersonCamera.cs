@@ -12,6 +12,7 @@ public class FirstPersonCamera : MonoBehaviour
 	public GameObject player;			//player object
 	public Camera fpcam;				//camera childed to player
 	public GlobalInput playerInput;
+	public GameObject neckJoint;
 
 	private bool cursorLocked = true;
 	private float xrDelay;
