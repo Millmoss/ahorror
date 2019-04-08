@@ -4762,7 +4762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &458084685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13150,7 +13150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1397635978
 AudioListener:
   m_ObjectHideFlags: 0
@@ -20088,5 +20088,25 @@ PrefabInstance:
       propertyPath: neckJoint
       value: 
       objectReference: {fileID: 2135644213}
+    - target: {fileID: 3707822279714647909, guid: 61d40a5057c46ad41828334c57236b4c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 331575431355681120, guid: 61d40a5057c46ad41828334c57236b4c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 331575430916195499, guid: 61d40a5057c46ad41828334c57236b4c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643140238683488610, guid: 61d40a5057c46ad41828334c57236b4c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d40a5057c46ad41828334c57236b4c, type: 3}
