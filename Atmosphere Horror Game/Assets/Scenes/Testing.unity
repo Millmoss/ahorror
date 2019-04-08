@@ -401,6 +401,7 @@ MonoBehaviour:
   playerInput: {fileID: 11337914}
   neckJoint: {fileID: 694408220}
   headJoint: {fileID: 694408300}
+  anim: {fileID: 703768508}
 --- !u!4 &11337920
 Transform:
   m_ObjectHideFlags: 0
@@ -18582,7 +18583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852499664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.642, z: 0.021}
+  m_LocalPosition: {x: 0, y: 0.642, z: -0.875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1853168934}
