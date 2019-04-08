@@ -13,6 +13,7 @@ public class FirstPersonCamera : MonoBehaviour
 	public Camera fpcam;				//camera childed to player
 	public GlobalInput playerInput;
 	public GameObject neckJoint;
+	public GameObject headJoint;
 
 	private bool cursorLocked = true;
 	private float xrDelay;
@@ -60,6 +61,10 @@ public class FirstPersonCamera : MonoBehaviour
 		fpcam.transform.localRotation = Quaternion.Euler(xrDelay, 0, 0);
 
 		updateLock();
+
+		float xrHead = xr / 10f;
+		neckJoint.transform.rotation = Quaternion.Euler(xrHead, neckJoint.transform.rotation.eulerAngles.y, neckJoint.transform.rotation.eulerAngles.z);
+		//fpcam.transform.position = headJoint.transform.position;
 	}
 
 	void updateLock()
