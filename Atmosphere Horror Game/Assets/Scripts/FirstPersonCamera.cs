@@ -62,11 +62,8 @@ public class FirstPersonCamera : MonoBehaviour
 		fpcam.transform.localRotation = Quaternion.Euler(xrDelay, 0, 0);
 
 		updateLock();
-
-		float xrHead = xr / 180f;
-		xrHead += .5f;
-		//anim.SetFloat("LookVal", xrHead * 17);
-		anim.PlayInFixedTime("Look", 3, xrHead);
+		
+		anim.SetFloat("LookVal", xr);
 	}
 
 	void updateLock()
