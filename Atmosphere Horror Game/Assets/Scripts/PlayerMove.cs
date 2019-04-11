@@ -13,18 +13,17 @@ public class PlayerMove : MonoBehaviour
 	private bool sprintInput;
 	public float acceleration = 3f;
 	public float moveSpeed = 4.5f;
-	public float sprintSpeed = 8.5f;
+	public float sprintSpeed = 7.65f;
 	public float jumpForce = 100f;
-	public float gravityForce = 10f;
-	public float mass = 70f;
-	public float height = 1.7f;                 //effective height of character for gameplay purposes
-	public float stepHeight = .3f;
 	protected Vector3 velocity = Vector3.zero;
 	protected Rigidbody characterBody;
 	protected Collider characterCollider;
 	protected bool canMove;
 	protected bool onGround;
 	private float lt;
+	public Animator anim;
+	private float mapArm = 1;
+	private float mapChange = 3f;
 
 	void Start()
 	{
@@ -48,6 +47,10 @@ public class PlayerMove : MonoBehaviour
 		jump();
 
 		gameObject.transform.Translate(velocity * Time.deltaTime);
+
+		mapArm += mapChange * Time.deltaTime;
+		mapArm = Mathf.Clamp01(mapArm);
+		anim.SetFloat("MapArm", mapArm, 0, Time.deltaTime);
 	}
 
 	void LateUpdate()
@@ -55,19 +58,34 @@ public class PlayerMove : MonoBehaviour
 
 	}
 
-	private void inputs()
+	void inputs()
 	{
 		xInput = playerInput.getXTiltMove() * acceleration;
 		zInput = playerInput.getZTiltMove() * acceleration;
 		sprintInput = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-		
+
 		if (!onGround)
+		{
 			jumpInput = false;
+			jumping = false;
+		}
 		else if (Input.GetKeyDown(KeyCode.Space) && onGround)
 			jumpInput = true;
+
+		if (Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown(KeyCode.Tab))
+		{
+			if (mapChange < 0)
+			{
+				mapChange = 3f;
+			}
+			else
+			{
+				mapChange = -3f;
+			}
+		}
 	}
 
-	private void move()
+	void move()
 	{
 		if (!canMove)
 		{
@@ -83,12 +101,6 @@ public class PlayerMove : MonoBehaviour
 		{
 			xInput /= 50;
 			zInput /= 50;
-		}
-
-		if (velocity.magnitude > moveSpeed)
-		{
-			xInput /= 10;
-			zInput /= 10;
 		}
 
 		if (xInput != 0)
@@ -111,28 +123,39 @@ public class PlayerMove : MonoBehaviour
 
 		//limit to max speed
 
+		float speedPercent = 0;
+
 		if (sprintInput)
 		{
 			velocity = Vector3.ClampMagnitude(new Vector3(velocity.x, 0, velocity.z), sprintSpeed) + new Vector3(0, velocity.y, 0);
+			speedPercent = new Vector3(velocity.x, 0, velocity.z).magnitude / sprintSpeed;
 		}
 		else
 		{
 			velocity = Vector3.ClampMagnitude(new Vector3(velocity.x, 0, velocity.z), moveSpeed) + new Vector3(0, velocity.y, 0);
+			speedPercent = new Vector3(velocity.x, 0, velocity.z).magnitude / (2 * moveSpeed);
 		}
+		anim.SetFloat("SpeedPercent", speedPercent, .1f, Time.deltaTime);
 	}
 
 	void jump()
 	{
-
+		if (onGround && jumpInput && !jumping)
+		{
+			characterBody.AddForce(new Vector3(0, jumpForce, 0));
+			jumping = true;
+		}
 	}
 
-	public void lockMovement()
+	void OnTriggerEnter(Collider c)
 	{
-		canMove = false;
+		if (c.gameObject.layer == 9)    //add raycast to object below to check if actually on it
+			onGround = true;
 	}
 
-	public void unlockMovement()
+	void OnTriggerExit(Collider c)
 	{
-		canMove = true;
+		if (c.gameObject.layer == 9)
+			onGround = false;
 	}
 }

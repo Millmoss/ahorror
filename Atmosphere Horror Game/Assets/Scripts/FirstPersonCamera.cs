@@ -12,6 +12,9 @@ public class FirstPersonCamera : MonoBehaviour
 	public GameObject player;			//player object
 	public Camera fpcam;				//camera childed to player
 	public GlobalInput playerInput;
+	public GameObject neckJoint;
+	public GameObject headJoint;
+	public Animator anim;
 
 	private bool cursorLocked = true;
 	private float xrDelay;
@@ -59,6 +62,8 @@ public class FirstPersonCamera : MonoBehaviour
 		fpcam.transform.localRotation = Quaternion.Euler(xrDelay, 0, 0);
 
 		updateLock();
+		
+		anim.SetFloat("LookVal", xr);
 	}
 
 	void updateLock()
