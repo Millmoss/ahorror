@@ -38,10 +38,7 @@ public class PlayerMove : MonoBehaviour
 	void Update()
 	{
 		inputs();
-	}
 
-	void FixedUpdate()
-	{
 		move();
 
 		jump();
@@ -51,6 +48,11 @@ public class PlayerMove : MonoBehaviour
 		mapArm += mapChange * Time.deltaTime;
 		mapArm = Mathf.Clamp01(mapArm);
 		anim.SetFloat("MapArm", mapArm, 0, Time.deltaTime);
+	}
+
+	void FixedUpdate()
+	{
+
 	}
 
 	void LateUpdate()
