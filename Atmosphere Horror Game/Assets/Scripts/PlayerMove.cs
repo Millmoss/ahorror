@@ -22,6 +22,7 @@ public class PlayerMove : MonoBehaviour
 	protected bool onGround;
 	private float lt;
 	public Animator anim;
+	public Animator anim2;
 	private float mapArm = 1;
 	private float mapChange = 3f;
 
@@ -48,6 +49,7 @@ public class PlayerMove : MonoBehaviour
 		mapArm += mapChange * Time.deltaTime;
 		mapArm = Mathf.Clamp01(mapArm);
 		anim.SetFloat("MapArm", mapArm, 0, Time.deltaTime);
+		anim2.SetFloat("MapArm", mapArm, 0, Time.deltaTime);
 	}
 
 	void FixedUpdate()
@@ -138,6 +140,7 @@ public class PlayerMove : MonoBehaviour
 			speedPercent = new Vector3(velocity.x, 0, velocity.z).magnitude / (2 * moveSpeed);
 		}
 		anim.SetFloat("SpeedPercent", speedPercent, .1f, Time.deltaTime);
+		anim2.SetFloat("SpeedPercent", speedPercent, .1f, Time.deltaTime);
 	}
 
 	void jump()

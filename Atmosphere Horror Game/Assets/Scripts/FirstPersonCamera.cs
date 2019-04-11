@@ -15,6 +15,7 @@ public class FirstPersonCamera : MonoBehaviour
 	public GameObject neckJoint;
 	public GameObject headJoint;
 	public Animator anim;
+	public Animator anim2;
 	public float posMod;
 	public GameObject camParent;
 
@@ -71,6 +72,7 @@ public class FirstPersonCamera : MonoBehaviour
 		updateLock();
 		
 		anim.SetFloat("LookVal", xr);
+		anim2.SetFloat("LookVal", xr);
 	}
 
 	void updateLock()
