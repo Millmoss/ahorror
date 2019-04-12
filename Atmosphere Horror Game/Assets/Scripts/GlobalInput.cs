@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
 public class GlobalInput : MonoBehaviour
 {
@@ -61,7 +60,7 @@ public class GlobalInput : MonoBehaviour
 
 	public float getXTiltLook()
 	{
-		float temp = CrossPlatformInputManager.GetAxis("Mouse X");
+		float temp = Input.GetAxis("Mouse X");
 		if (Mathf.Abs(temp) >= .07f)
 			return temp;
 		return 0;
@@ -69,7 +68,7 @@ public class GlobalInput : MonoBehaviour
 
 	public float getZTiltLook()
 	{
-		float temp = CrossPlatformInputManager.GetAxis("Mouse Y");
+		float temp = Input.GetAxis("Mouse Y");
 		if (Mathf.Abs(temp) >= .07f)
 			return temp;
 		return 0;

@@ -15,8 +15,13 @@ public class FirstPersonCamera : MonoBehaviour
 	public GameObject neckJoint;
 	public GameObject headJoint;
 	public Animator anim;
+	public Animator anim2;
+	public float posMod;
+	public GameObject camParent;
 
 	private bool cursorLocked = true;
+	//private float xDelta = 0;
+	//private float yDelta = 0;
 	private float xrDelay;
 	private float yrDelay;
 	private float xr;
@@ -29,15 +34,16 @@ public class FirstPersonCamera : MonoBehaviour
 		xr = player.transform.rotation.eulerAngles.x;
 		yr = fpcam.transform.localRotation.eulerAngles.y;
 		//Time.timeScale = 0.1f;
+		Application.targetFrameRate = 300;
 	}
 	
-    void Update()
+    void LateUpdate()
     {
 		float xDelta = playerInput.getXTiltLook();
 		float yDelta = playerInput.getZTiltLook();
 
-		xr -= yDelta * ySensitivity * Time.deltaTime;
-		yr += xDelta * xSensitivity * Time.deltaTime;
+		xr -= yDelta * ySensitivity;
+		yr += xDelta * xSensitivity;
 
 		if (yr > 360)
 		{
@@ -55,15 +61,18 @@ public class FirstPersonCamera : MonoBehaviour
 		else if (xr < xMin)
 			xr = xMin;
 
-		xrDelay = Mathf.Lerp(xrDelay, xr, 40 * Time.deltaTime);
-		yrDelay = Mathf.Lerp(yrDelay, yr, 40 * Time.deltaTime);
+		xrDelay = Mathf.Lerp(xrDelay, xr, 60 * Time.deltaTime);
+		yrDelay = Mathf.Lerp(yrDelay, yr, 60 * Time.deltaTime);
 
 		player.transform.rotation = Quaternion.Euler(0, yrDelay, 0);
+		camParent.transform.rotation = Quaternion.Euler(0, yrDelay, 0);
 		fpcam.transform.localRotation = Quaternion.Euler(xrDelay, 0, 0);
+		fpcam.transform.position = player.transform.position + new Vector3(0, posMod);
 
 		updateLock();
 		
 		anim.SetFloat("LookVal", xr);
+		anim2.SetFloat("LookVal", xr);
 	}
 
 	void updateLock()
