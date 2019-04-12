@@ -22,6 +22,8 @@ public class PlayerMove : MonoBehaviour
 	protected bool onGround;
 	private float lt;
 	public Animator anim;
+	private float mapArm = 1;
+	private float mapChange = 3f;
 
 	void Start()
 	{
@@ -45,6 +47,10 @@ public class PlayerMove : MonoBehaviour
 		jump();
 
 		gameObject.transform.Translate(velocity * Time.deltaTime);
+
+		mapArm += mapChange * Time.deltaTime;
+		mapArm = Mathf.Clamp01(mapArm);
+		anim.SetFloat("MapArm", mapArm, 0, Time.deltaTime);
 	}
 
 	void LateUpdate()
@@ -65,6 +71,18 @@ public class PlayerMove : MonoBehaviour
 		}
 		else if (Input.GetKeyDown(KeyCode.Space) && onGround)
 			jumpInput = true;
+
+		if (Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown(KeyCode.Tab))
+		{
+			if (mapChange < 0)
+			{
+				mapChange = 3f;
+			}
+			else
+			{
+				mapChange = -3f;
+			}
+		}
 	}
 
 	void move()
