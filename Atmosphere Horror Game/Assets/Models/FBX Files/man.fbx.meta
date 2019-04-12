@@ -108,6 +108,22 @@ ModelImporter:
     7400002: Armature|Idle
     7400004: Armature|Run
     7400006: Armature|Walk
+    7400008: Empty.001|bad
+    7400010: Empty.001|Walk2
+    7400012: Armature|ArmLeftRun
+    7400014: Armature|ArmLeftWalk
+    7400016: Armature|ArmRightRun
+    7400018: Armature|ArmRightWalk
+    7400020: Armature|IdleArmLeft
+    7400022: Armature|IdleArmRight
+    7400024: Armature|LookDown
+    7400026: Armature|LookUp
+    7400028: Armature|MapIdle
+    7400030: Armature|MapIn
+    7400032: Armature|MapOut
+    7400034: Armature|MapWalk
+    7400036: Armature|Run2
+    7400038: Armature|Walk2
     9500000: //RootNode
     10800000: Lamp
     13700000: Cube
