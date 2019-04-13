@@ -15,6 +15,8 @@ public class CamSwap : MonoBehaviour
 
 	void OnTriggerEnter(Collider c)
 	{
+        if (c.gameObject.layer == 9)
+            return;
 		main.enabled = false;
 		if (secondary != null)
 			secondary.enabled = false;
@@ -22,8 +24,10 @@ public class CamSwap : MonoBehaviour
 	}
 
 	void OnTriggerExit(Collider c)
-	{
-		main.enabled = true;
+    {
+        if (c.gameObject.layer == 9)
+            return;
+        main.enabled = true;
 		swap.enabled = false;
 		print("ASDFA");
 	}
