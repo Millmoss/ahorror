@@ -32,7 +32,7 @@ public class FirstPersonCamera : MonoBehaviour
 		xrDelay = xr;
 		yrDelay = yr;
 		xr = player.transform.rotation.eulerAngles.x;
-		yr = fpcam.transform.localRotation.eulerAngles.y;
+		yr = camParent.transform.localRotation.eulerAngles.y;
 		//Time.timeScale = 0.1f;
 		Application.targetFrameRate = 300;
 	}
@@ -73,6 +73,11 @@ public class FirstPersonCamera : MonoBehaviour
 		
 		anim.SetFloat("LookVal", xr);
 		anim2.SetFloat("LookVal", xr);
+	}
+
+	public void addRotation(float y)
+	{
+		yr += y;
 	}
 
 	void updateLock()

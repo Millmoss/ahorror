@@ -8,6 +8,7 @@ public class Teleport : MonoBehaviour
 	//more functionality will need to be added dependant upon what is needed of this script
 
 	public GameObject port = null;
+	public GameObject cam;
 
 	void OnTriggerEnter(Collider c)
 	{
@@ -15,6 +16,9 @@ public class Teleport : MonoBehaviour
 		{
 			Vector3 toPos = transform.position - c.transform.position;
 			c.transform.position = port.transform.position - toPos;
+			Vector3 r = new Vector3(0, port.transform.rotation.eulerAngles.y - transform.rotation.eulerAngles.y, 0);
+			c.transform.Rotate(r);
+			c.GetComponent<FirstPersonCamera>().addRotation(r.y);
 		}
 	}
 }
