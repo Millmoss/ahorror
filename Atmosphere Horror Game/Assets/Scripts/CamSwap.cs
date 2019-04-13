@@ -5,6 +5,7 @@ using UnityEngine;
 public class CamSwap : MonoBehaviour
 {
 	public Camera main;
+	public Camera secondary = null;
 	public Camera swap;
 
     void Start()
@@ -15,6 +16,8 @@ public class CamSwap : MonoBehaviour
 	void OnTriggerEnter(Collider c)
 	{
 		main.enabled = false;
+		if (secondary != null)
+			secondary.enabled = false;
 		swap.enabled = true;
 	}
 
