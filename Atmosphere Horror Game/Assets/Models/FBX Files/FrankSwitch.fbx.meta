@@ -1,72 +1,57 @@
 fileFormatVersion: 2
-guid: dacab654c3a116641a0b310593196fc7
+guid: 8b0e9b8638cc3724aad83c7876d00fdc
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: pCube1
-    100002: pCylinder1
-    100004: pCylinder10
-    100006: pCylinder11
-    100008: pCylinder2
-    100010: pCylinder3
-    100012: pCylinder4
-    100014: pCylinder5
-    100016: pCylinder6
-    100018: pCylinder7
-    100020: pCylinder8
-    100022: pCylinder9
-    100024: //RootNode
-    400000: pCube1
-    400002: pCylinder1
-    400004: pCylinder10
-    400006: pCylinder11
-    400008: pCylinder2
-    400010: pCylinder3
-    400012: pCylinder4
-    400014: pCylinder5
-    400016: pCylinder6
-    400018: pCylinder7
-    400020: pCylinder8
-    400022: pCylinder9
-    400024: //RootNode
-    2100000: spacetheme
+    100000: //RootNode
+    100002: pCube1
+    100004: pCube5
+    100006: pCube6
+    100008: pCube7
+    100010: pCylinder1
+    100012: pCylinder2
+    100014: pCylinder3
+    100016: pCylinder4
+    400000: //RootNode
+    400002: pCube1
+    400004: pCube5
+    400006: pCube6
+    400008: pCube7
+    400010: pCylinder1
+    400012: pCylinder2
+    400014: pCylinder3
+    400016: pCylinder4
+    2100000: switch1
     2300000: pCube1
-    2300002: pCylinder1
-    2300004: pCylinder10
-    2300006: pCylinder11
-    2300008: pCylinder2
-    2300010: pCylinder3
-    2300012: pCylinder4
-    2300014: pCylinder5
-    2300016: pCylinder6
-    2300018: pCylinder7
-    2300020: pCylinder8
-    2300022: pCylinder9
+    2300002: pCube5
+    2300004: pCube6
+    2300006: pCube7
+    2300008: pCylinder1
+    2300010: pCylinder2
+    2300012: pCylinder3
+    2300014: pCylinder4
     3300000: pCube1
-    3300002: pCylinder1
-    3300004: pCylinder10
-    3300006: pCylinder11
-    3300008: pCylinder2
-    3300010: pCylinder3
-    3300012: pCylinder4
-    3300014: pCylinder5
-    3300016: pCylinder6
-    3300018: pCylinder7
-    3300020: pCylinder8
-    3300022: pCylinder9
+    3300002: pCube5
+    3300004: pCube6
+    3300006: pCube7
+    3300008: pCylinder1
+    3300010: pCylinder2
+    3300012: pCylinder3
+    3300014: pCylinder4
     4300000: pCube1
-    4300002: pCylinder1
-    4300004: pCylinder2
-    4300006: pCylinder3
-    4300008: pCylinder4
-    4300010: pCylinder5
-    4300012: pCylinder6
-    4300014: pCylinder7
-    4300016: pCylinder8
-    4300018: pCylinder9
-    4300020: pCylinder10
-    4300022: pCylinder11
-  externalObjects: {}
+    4300002: pCube5
+    4300004: pCube6
+    4300006: pCube7
+    4300008: pCylinder1
+    4300010: pCylinder2
+    4300012: pCylinder3
+    4300014: pCylinder4
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: switch1
+    second: {fileID: 2100000, guid: bd536cd2e25acec4396e750091adc229, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -97,7 +82,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 10
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
