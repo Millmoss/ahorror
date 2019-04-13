@@ -9,7 +9,6 @@ public class OnParticleHit_PlaySound : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        print("E");
         int new_clip = Random.Range(0, clips.Length - 1);
         _audio.clip = clips[new_clip];
         _audio.Play(0);
