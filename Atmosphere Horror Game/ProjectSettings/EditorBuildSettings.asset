@@ -11,10 +11,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Testing.unity
     guid: 6d21a85fe3d0bfb4eb2958c9515f074a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: c830f7beb42437e40803834d0cb4cf5d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level_One.unity
     guid: f5c7a1d1f826da6488e8924afab2833a
+  - enabled: 1
+    path: Assets/Scenes/DemoCuts.unity
+    guid: ba8e89d6d1108d74cb040c4930b15b34
   m_configObjects: {}
