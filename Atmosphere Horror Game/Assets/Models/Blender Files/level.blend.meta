@@ -37,6 +37,7 @@ ModelImporter:
     100062: Cube_030
     100064: Cube_031
     100066: Cube_032
+    100068: Cube_033
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -71,6 +72,7 @@ ModelImporter:
     400062: Cube_030
     400064: Cube_031
     400066: Cube_032
+    400068: Cube_033
     2100000: unnamed
     2100002: Material
     2100004: Material__conc1_png
@@ -111,6 +113,7 @@ ModelImporter:
     2300060: Cube_030
     2300062: Cube_031
     2300064: Cube_032
+    2300066: Cube_033
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -144,6 +147,7 @@ ModelImporter:
     3300060: Cube_030
     3300062: Cube_031
     3300064: Cube_032
+    3300066: Cube_033
     4300000: Cube_001
     4300002: Cube
     4300004: Cube_013
@@ -177,6 +181,7 @@ ModelImporter:
     4300060: Cube_029
     4300062: Cube_028
     4300064: Cube_027
+    4300066: Cube_033
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs
