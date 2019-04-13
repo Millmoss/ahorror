@@ -31,6 +31,7 @@ public class OnTrigger_PlaySound : MonoBehaviour
             _audio.clip = clips[new_clip];
            _audio.Play(0);
             on_ground = true;
+			print("ASD");
         }
     }
 
