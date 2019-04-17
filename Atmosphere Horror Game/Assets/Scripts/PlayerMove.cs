@@ -23,6 +23,8 @@ public class PlayerMove : MonoBehaviour
 	private float lt;
 	public Animator anim;
 	public Animator anim2;
+	public Animator anim3;
+	public Animator anim4;
 	private float mapArm = 1;
 	private float mapChange = 3f;
 
@@ -141,6 +143,8 @@ public class PlayerMove : MonoBehaviour
 		}
 		anim.SetFloat("SpeedPercent", speedPercent, .1f, Time.deltaTime);
 		anim2.SetFloat("SpeedPercent", speedPercent, .1f, Time.deltaTime);
+		anim3.SetFloat("SpeedPercent", speedPercent, .1f, Time.deltaTime);
+		anim4.SetFloat("SpeedPercent", speedPercent, .1f, Time.deltaTime);
 	}
 
 	void jump()
