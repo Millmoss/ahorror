@@ -10,7 +10,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCylinder1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blackmetal
+    second: {fileID: 2100000, guid: 1dd11ded6c7f5ac4d911fe5edfd3e33a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: silvermetal
+    second: {fileID: 2100000, guid: 575a81d52fa43404aa6ef75dcf1760df, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
