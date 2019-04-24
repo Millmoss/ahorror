@@ -18,6 +18,7 @@ public class FirstPersonCamera : MonoBehaviour
 	public Animator anim2;
 	public float posMod;
 	public GameObject camParent;
+	public Rigidbody playerBody;
 
 	private bool cursorLocked = true;
 	//private float xDelta = 0;
@@ -67,12 +68,18 @@ public class FirstPersonCamera : MonoBehaviour
 		player.transform.rotation = Quaternion.Euler(0, yrDelay, 0);
 		camParent.transform.rotation = Quaternion.Euler(0, yrDelay, 0);
 		fpcam.transform.localRotation = Quaternion.Euler(xrDelay, 0, 0);
-		fpcam.transform.position = player.transform.position + new Vector3(0, posMod);
+		//fpcam.transform.position = player.transform.position + new Vector3(0, posMod);
+		fpcam.transform.position = playerBody.position + new Vector3(0, posMod);
 
 		updateLock();
 		
 		anim.SetFloat("LookVal", xr);
 		anim2.SetFloat("LookVal", xr);
+	}
+
+	void FixedUpdate()
+	{
+		fpcam.transform.position = playerBody.position + new Vector3(0, posMod);
 	}
 
 	public void addRotation(float y)
