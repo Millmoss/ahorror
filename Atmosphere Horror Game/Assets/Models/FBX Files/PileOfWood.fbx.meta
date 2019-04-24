@@ -26,7 +26,12 @@ ModelImporter:
     4300002: pCube2
     4300004: pCube3
     4300006: pCube4
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: 7b6928bc02674c949803fed5b2151119, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
